@@ -23,11 +23,11 @@ export function DefaultPlaybackMenu() {
         })}
         <media-menu-items class="vds-menu-items">
           ${[
-            DefaultMenuSection({
+            /*DefaultMenuSection({
               children: DefaultLoopCheckbox(),
-            }),
+            }),*/
             DefaultSpeedMenuSection(),
-            DefaultQualityMenuSection(),
+            //DefaultQualityMenuSection(),
           ]}
         </media-menu-items>
       </media-menu>
@@ -80,13 +80,13 @@ function DefaultSpeedMenuSection() {
 function getSpeedMin() {
   const { playbackRates } = useDefaultLayoutContext(),
     rates = playbackRates();
-  return isArray(rates) ? rates[0] ?? 0 : rates.min;
+  return isArray(rates) ? (rates[0] ?? 0) : rates.min;
 }
 
 function getSpeedMax() {
   const { playbackRates } = useDefaultLayoutContext(),
     rates = playbackRates();
-  return isArray(rates) ? rates[rates.length - 1] ?? 2 : rates.max;
+  return isArray(rates) ? (rates[rates.length - 1] ?? 2) : rates.max;
 }
 
 function getSpeedStep() {

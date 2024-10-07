@@ -67,12 +67,12 @@ export class MediaAnnouncer extends Component<
 
   #watchFullscreen() {
     const { fullscreen } = this.#media.$state;
-    this.#setLabel(fullscreen() ? 'Enter Fullscreen' : 'Exit Fullscreen');
+    this.#setLabel(fullscreen() ? 'Fullscreen' : 'Exit Fullscreen');
   }
 
   #watchPiP() {
     const { pictureInPicture } = this.#media.$state;
-    this.#setLabel(pictureInPicture() ? 'Enter PiP' : 'Exit PiP');
+    this.#setLabel(pictureInPicture() ? 'Picture-in-Picture' : 'Exit Picture-in-Picture');
   }
 
   #watchCaptions() {
@@ -167,8 +167,8 @@ export type MediaAnnouncerWord =
   | 'Pause'
   | 'Enter Fullscreen'
   | 'Exit Fullscreen'
-  | 'Enter PiP'
-  | 'Exit PiP'
+  | 'Picture-in-Picture'
+  | 'Exit Picture-in-Picture'
   | 'Closed-Captions On'
   | 'Closed-Captions Off'
   | 'Mute'

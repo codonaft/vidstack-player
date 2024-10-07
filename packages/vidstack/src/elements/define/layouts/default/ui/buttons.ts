@@ -59,8 +59,8 @@ export function DefaultGoogleCastButton({ tooltip }: { tooltip: TooltipPlacement
 
 export function DefaultPlayButton({ tooltip }: { tooltip: TooltipPlacement }) {
   const { translations } = useDefaultLayoutContext(),
-    $playText = $i18n(translations, 'Play'),
-    $pauseText = $i18n(translations, 'Pause');
+    $playText = $i18n(translations, 'Play', 'k'),
+    $pauseText = $i18n(translations, 'Pause', 'k');
   return html`
     <media-tooltip class="vds-play-tooltip vds-tooltip">
       <media-tooltip-trigger>
@@ -87,8 +87,8 @@ export function DefaultMuteButton({
   ref?: RefOrCallback;
 }) {
   const { translations } = useDefaultLayoutContext(),
-    $muteText = $i18n(translations, 'Mute'),
-    $unmuteText = $i18n(translations, 'Unmute');
+    $muteText = $i18n(translations, 'Mute', 'm'),
+    $unmuteText = $i18n(translations, 'Unmute', 'm');
   return html`
     <media-tooltip class="vds-mute-tooltip vds-tooltip">
       <media-tooltip-trigger>
@@ -110,8 +110,8 @@ export function DefaultMuteButton({
 
 export function DefaultCaptionButton({ tooltip }: { tooltip: TooltipPlacement }) {
   const { translations } = useDefaultLayoutContext(),
-    $ccOnText = $i18n(translations, 'Closed-Captions On'),
-    $ccOffText = $i18n(translations, 'Closed-Captions Off');
+    $ccOnText = $i18n(translations, 'Closed-Captions On', 'c'),
+    $ccOffText = $i18n(translations, 'Closed-Captions Off', 'c');
   return html`
     <media-tooltip class="vds-caption-tooltip vds-tooltip">
       <media-tooltip-trigger>
@@ -132,14 +132,14 @@ export function DefaultCaptionButton({ tooltip }: { tooltip: TooltipPlacement })
 
 export function DefaultPIPButton() {
   const { translations } = useDefaultLayoutContext(),
-    $enterText = $i18n(translations, 'Enter PiP'),
-    $exitText = $i18n(translations, 'Exit PiP');
+    $enterText = $i18n(translations, 'Picture-in-Picture', 'i'),
+    $exitText = $i18n(translations, 'Exit Picture-in-Picture', 'i');
   return html`
     <media-tooltip class="vds-pip-tooltip vds-tooltip">
       <media-tooltip-trigger>
         <media-pip-button
           class="vds-pip-button vds-button"
-          aria-label=${$i18n(translations, 'PiP')}
+          aria-label=${$i18n(translations, 'Picture-in-Picture')}
         >
           ${IconSlots(['pip-enter', 'pip-exit'])}
         </media-pip-button>
@@ -154,8 +154,8 @@ export function DefaultPIPButton() {
 
 export function DefaultFullscreenButton({ tooltip }: { tooltip: TooltipPlacement }) {
   const { translations } = useDefaultLayoutContext(),
-    $enterText = $i18n(translations, 'Enter Fullscreen'),
-    $exitText = $i18n(translations, 'Exit Fullscreen');
+    $enterText = $i18n(translations, 'Fullscreen', 'f'),
+    $exitText = $i18n(translations, 'Exit Fullscreen', 'f');
   return html`
     <media-tooltip class="vds-fullscreen-tooltip vds-tooltip">
       <media-tooltip-trigger>

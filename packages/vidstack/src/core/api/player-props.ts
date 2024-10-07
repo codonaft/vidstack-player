@@ -208,8 +208,8 @@ export interface MediaPlayerProps
    *  seekForward: ['l', 'L', 'ArrowRight'],
    *  volumeUp: 'ArrowUp',
    *  volumeDown: 'ArrowDown',
-   *  speedUp: '>',
-   *  slowDown: '<',
+   *  speedUp: ['>', ']'],
+   *  slowDown: ['<', '['],
    *  // Callback.
    *  fooBar: {
    *    keys: ['k', 'Space'],

@@ -21,10 +21,8 @@ export type DefaultLayoutWord =
   | 'Disconnected'
   | 'Display Background'
   | 'Download'
-  | 'Enter Fullscreen'
-  | 'Enter PiP'
   | 'Exit Fullscreen'
-  | 'Exit PiP'
+  | 'Exit Picture-in-Picture'
   | 'Font'
   | 'Family'
   | 'Fullscreen'
@@ -38,7 +36,7 @@ export type DefaultLayoutWord =
   | 'Pause'
   | 'Play'
   | 'Playback'
-  | 'PiP'
+  | 'Picture-in-Picture'
   | 'Quality'
   | 'Replay'
   | 'Reset'
@@ -65,6 +63,8 @@ export type DefaultLayoutTranslations = {
 export function i18n(
   translations: ReadSignal<Partial<DefaultLayoutTranslations> | null>,
   word: string,
+  hotkey?: string,
 ) {
-  return translations()?.[word] ?? word;
+  const hint = hotkey ? `\u3037⌨️ ${hotkey}` : '';
+  return (translations()?.[word] ?? word) + hint;
 }

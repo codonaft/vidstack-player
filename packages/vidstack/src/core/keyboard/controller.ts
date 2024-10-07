@@ -16,8 +16,8 @@ export const MEDIA_KEY_SHORTCUTS: MediaKeyShortcuts = {
   seekForward: 'l L ArrowRight',
   volumeUp: 'ArrowUp',
   volumeDown: 'ArrowDown',
-  speedUp: '>',
-  slowDown: '<',
+  speedUp: '> ]',
+  slowDown: '< [',
 };
 
 const MODIFIER_KEYS = new Set(['Shift', 'Alt', 'Meta', 'Ctrl']),

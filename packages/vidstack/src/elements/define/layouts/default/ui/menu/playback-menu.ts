@@ -18,24 +18,32 @@ export function DefaultPlaybackMenu() {
     return html`
       <media-menu class="vds-playback-menu vds-menu">
         ${DefaultMenuButton({
-          label: () => i18n(translations, 'Playback'),
+          label: () => i18n(translations, 'Speed'),
           icon: 'menu-playback',
         })}
         <media-menu-items class="vds-menu-items">
           ${[
             /*DefaultMenuSection({
               children: DefaultLoopCheckbox(),
-            }),*/
+            }),
+            DefaultQualityMenuSection(),*/
             DefaultSpeedMenuSection(),
-            //DefaultQualityMenuSection(),
           ]}
+          <media-speed-radio-group class="vds-radio-group" normal-label="Normal">
+            <template>
+              <media-radio class="vds-radio">
+                <media-icon class="vds-icon" type="check"></media-icon>
+                <span class="vds-radio-label" data-part="label"></span>
+              </media-radio>
+            </template>
+          </media-speed-radio-group>
         </media-menu-items>
       </media-menu>
     `;
   });
 }
 
-function DefaultLoopCheckbox() {
+/*function DefaultLoopCheckbox() {
   const { remote } = useMediaContext(),
     { translations } = useDefaultLayoutContext(),
     label = 'Loop';
@@ -50,7 +58,7 @@ function DefaultLoopCheckbox() {
       },
     }),
   });
-}
+}*/
 
 function DefaultSpeedMenuSection() {
   return $signal(() => {
@@ -60,7 +68,7 @@ function DefaultSpeedMenuSection() {
     if (!canSetPlaybackRate()) return null;
 
     return DefaultMenuSection({
-      label: $i18n(translations, 'Speed'),
+      label: 'Custom',
       value: $signal(() =>
         playbackRate() === 1 ? i18n(translations, 'Normal') : playbackRate() + 'x',
       ),
@@ -140,7 +148,7 @@ function DefaultAutoQualityCheckbox() {
   });
 }
 
-function DefaultQualityMenuSection() {
+/*function DefaultQualityMenuSection() {
   return $signal(() => {
     const { hideQualityBitrate, translations } = useDefaultLayoutContext(),
       { canSetQuality, qualities, quality } = useMediaState(),
@@ -170,7 +178,7 @@ function DefaultQualityMenuSection() {
       ],
     });
   });
-}
+}*/
 
 function DefaultQualitySlider() {
   const { translations } = useDefaultLayoutContext(),

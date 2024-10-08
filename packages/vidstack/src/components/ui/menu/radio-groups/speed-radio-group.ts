@@ -58,7 +58,7 @@ export class SpeedRadioGroup extends Component<SpeedRadioGroupProps, {}, SpeedRa
   getOptions(): RadioOption[] {
     const { rates, normalLabel } = this.$props;
     return rates().map((rate) => ({
-      label: rate === 1 ? normalLabel : rate + '×',
+      label: rate === 1 ? normalLabel : rate + '',
       value: rate.toString(),
     }));
   }
@@ -71,7 +71,7 @@ export class SpeedRadioGroup extends Component<SpeedRadioGroupProps, {}, SpeedRa
     const { normalLabel } = this.$props,
       { playbackRate } = this.#media.$state,
       rate = playbackRate();
-    this.#menu?.hint.set(rate === 1 ? normalLabel() : rate + '×');
+    this.#menu?.hint.set(rate === 1 ? normalLabel() : rate + '');
   }
 
   #watchControllerDisabled() {

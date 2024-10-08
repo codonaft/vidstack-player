@@ -69,9 +69,7 @@ function DefaultSpeedMenuSection() {
 
     return DefaultMenuSection({
       label: 'Custom',
-      value: $signal(() =>
-        playbackRate() === 1 ? i18n(translations, 'Normal') : playbackRate() + 'x',
-      ),
+      value: $signal(() => ''),
       children: [
         DefaultMenuSliderItem({
           upIcon: 'menu-speed-up',

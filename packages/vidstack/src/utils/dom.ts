@@ -419,7 +419,9 @@ export function isHTMLElement(el: any): el is HTMLElement {
 }
 
 export function useColorSchemePreference() {
-  const colorScheme = signal<'light' | 'dark'>('dark');
+  return signal<'light' | 'dark'>('light');
+
+  /*const colorScheme = signal<'light' | 'dark'>('dark');
 
   if (__SERVER__) return colorScheme;
 
@@ -432,7 +434,7 @@ export function useColorSchemePreference() {
   onChange();
   listenEvent(media, 'change', onChange);
 
-  return colorScheme;
+  return colorScheme;*/
 }
 
 export function watchColorScheme(

@@ -65,6 +65,7 @@ export function i18n(
   word: string,
   hotkey?: string,
 ) {
-  const hint = hotkey ? `\u3037⌨️ ${hotkey}` : '';
-  return (translations()?.[word] ?? word) + hint;
+  const hint = hotkey ? `(⌨️${hotkey}) ` : '';
+  //return hint + (translations()?.[word] ?? word);
+  return hint + word;
 }

@@ -1,5 +1,7 @@
 import type { ReadSignal } from 'maverick.js';
 
+import { useDefaultLayoutContext } from '../../layouts/default/context';
+
 export type DefaultLayoutWord =
   | 'Announcements'
   | 'Accessibility'
@@ -65,7 +67,8 @@ export function i18n(
   word: string,
   hotkey?: string,
 ) {
-  const hint = hotkey ? `(⌨️${hotkey}) ` : '';
+  const { smallWhen } = useDefaultLayoutContext();
+  const hint = hotkey && !smallWhen() ? `(⌨️${hotkey}) ` : '';
   //return hint + (translations()?.[word] ?? word);
   return hint + word;
 }

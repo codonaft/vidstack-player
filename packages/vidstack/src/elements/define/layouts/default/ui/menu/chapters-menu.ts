@@ -33,7 +33,7 @@ export function DefaultChaptersMenu({
       smallWhen: smWhen,
     } = useDefaultLayoutContext(),
     $disabled = computed(() => {
-      const $startTime = seekableStart(),
+      /*const $startTime = seekableStart(),
         $endTime = seekableEnd(),
         $track = signal<TextTrack | null>(null);
 
@@ -43,7 +43,8 @@ export function DefaultChaptersMenu({
         (cue) => cue.startTime <= $endTime && cue.endTime >= $startTime,
       );
 
-      return !cues?.length;
+      return !cues?.length;*/
+      return true;
     });
 
   if ($disabled()) return null;

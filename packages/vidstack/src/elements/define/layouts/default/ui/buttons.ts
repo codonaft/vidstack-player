@@ -110,8 +110,8 @@ export function DefaultMuteButton({
 
 export function DefaultCaptionButton({ tooltip }: { tooltip: TooltipPlacement }) {
   const { translations } = useDefaultLayoutContext(),
-    $ccOnText = $i18n(translations, 'Closed-Captions On', 'c'),
-    $ccOffText = $i18n(translations, 'Closed-Captions Off', 'c');
+    $ccOnText = $i18n(translations, 'Subtitles On', 'c'),
+    $ccOffText = $i18n(translations, 'Subtitles Off', 'c');
   return html`
     <media-tooltip class="vds-caption-tooltip vds-tooltip">
       <media-tooltip-trigger>

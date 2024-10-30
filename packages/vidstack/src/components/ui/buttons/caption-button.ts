@@ -48,7 +48,7 @@ export class CaptionButton extends Component<CaptionButtonProps, {}, CaptionButt
 
   protected override onAttach(el: HTMLElement): void {
     el.setAttribute('data-media-tooltip', 'caption');
-    setARIALabel(el, 'Captions');
+    setARIALabel(el, 'Subtitles');
   }
 
   #onPress(event: Event) {

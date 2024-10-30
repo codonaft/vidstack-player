@@ -18,7 +18,7 @@ export function DefaultCaptionsMenu() {
     return html`
       <media-menu class="vds-captions-menu vds-menu">
         ${DefaultMenuButton({
-          label: () => i18n(translations, 'Captions'),
+          label: () => i18n(translations, 'Subtitles'),
           icon: 'menu-captions',
         })}
         <media-menu-items class="vds-menu-items">

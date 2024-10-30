@@ -77,7 +77,7 @@ export class MediaAnnouncer extends Component<
 
   #watchCaptions() {
     const { textTrack } = this.#media.$state;
-    this.#setLabel(textTrack() ? 'Closed-Captions On' : 'Closed-Captions Off');
+    this.#setLabel(textTrack() ? 'Subtitles On' : 'Subtitles Off');
   }
 
   #watchVolume() {
@@ -169,8 +169,8 @@ export type MediaAnnouncerWord =
   | 'Exit Fullscreen'
   | 'Picture-in-Picture'
   | 'Exit Picture-in-Picture'
-  | 'Closed-Captions On'
-  | 'Closed-Captions Off'
+  | 'Subtitles On'
+  | 'Subtitles Off'
   | 'Mute'
   | 'Volume'
   | 'Seek Forward'

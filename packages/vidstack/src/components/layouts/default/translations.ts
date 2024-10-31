@@ -68,7 +68,7 @@ export function i18n(
   hotkey?: string,
 ) {
   const { smallWhen } = useDefaultLayoutContext();
-  const hint = hotkey && !smallWhen() ? `(⌨️${hotkey}) ` : '';
+  const hint = hotkey && !smallWhen() ? `(${hotkey}) ` : '';
   //return hint + (translations()?.[word] ?? word);
   return hint + word;
 }

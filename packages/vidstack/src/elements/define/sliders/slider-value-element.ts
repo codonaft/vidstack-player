@@ -1,6 +1,7 @@
 import { effect } from 'maverick.js';
 import { BOOLEAN, Host, type Attributes } from 'maverick.js/element';
 
+import { useDefaultLayoutContext } from '../../../components/layouts/default/context';
 import { SliderValue, type SliderValueProps } from '../../../components/ui/sliders/slider-value';
 
 /**
@@ -37,7 +38,11 @@ export class MediaSliderValueElement extends Host(HTMLElement, SliderValue) {
 
   protected onConnect() {
     effect(() => {
-      this.textContent = this.getValueText();
+      const { smallWhen } = useDefaultLayoutContext();
+      const text = this.getValueText();
+      const hotkey = text.endsWith('%') ? '⇅' : '⇄';
+      const hint = hotkey && !smallWhen() ? `(${hotkey}) ` : '';
+      this.textContent = hint + text;
     });
   }
 }

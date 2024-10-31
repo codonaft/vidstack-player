@@ -18,7 +18,7 @@ export function DefaultPlaybackMenu() {
     return html`
       <media-menu class="vds-playback-menu vds-menu">
         ${DefaultMenuButton({
-          label: () => i18n(translations, 'Speed', '[ ]'),
+          label: () => i18n(translations, 'Speed'),
           icon: 'menu-playback',
         })}
         <media-menu-items class="vds-menu-items">

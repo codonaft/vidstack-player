@@ -15,6 +15,6 @@ export class DefaultVideoLayout extends DefaultLayout {
   static override props: DefaultLayoutProps = {
     ...super.props,
     when: ({ viewType }) => viewType === 'video',
-    smallWhen: ({ width, height }) => width < 576 || height < 380,
+    smallWhen: ({ width, height }) => width < 611.93 || height < 344,
   };
 }

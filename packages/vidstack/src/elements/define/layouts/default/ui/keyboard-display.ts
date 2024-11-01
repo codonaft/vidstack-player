@@ -22,7 +22,8 @@ export function DefaultKeyboardDisplay() {
       { lastKeyboardAction } = media.$state;
 
     effect(() => {
-      visible.set(!!lastKeyboardAction());
+      const value = !!lastKeyboardAction();
+      setTimeout(() => visible.set(value), 100);
       const id = setTimeout(() => visible.set(false), 500);
       return () => {
         visible.set(false);

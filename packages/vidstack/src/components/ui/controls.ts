@@ -14,7 +14,7 @@ import { setAttributeIfEmpty } from '../../utils/dom';
  */
 export class Controls extends Component<ControlsProps, {}, ControlsEvents> {
   static props: ControlsProps = {
-    hideDelay: 2000,
+    hideDelay: 1000,
     hideOnMouseLeave: false,
   };
 
@@ -66,7 +66,7 @@ export class Controls extends Component<ControlsProps, {}, ControlsEvents> {
       { hideDelay, hideOnMouseLeave } = this.$props;
 
     // Use controls delay prop on player if this is the default value.
-    controls.defaultDelay = hideDelay() === 2000 ? this.#media.$props.controlsDelay() : hideDelay();
+    controls.defaultDelay = hideDelay() === 1000 ? this.#media.$props.controlsDelay() : hideDelay();
     controls.hideOnMouseLeave = hideOnMouseLeave();
   }
 

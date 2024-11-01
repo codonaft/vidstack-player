@@ -38,7 +38,7 @@ export const mediaPlayerProps: MediaPlayerProps = {
   preferNativeHLS: false,
   src: '',
   title: '',
-  controlsDelay: 2000,
+  controlsDelay: 1000,
   hideControlsOnMouseLeave: false,
   viewType: 'unknown',
   streamType: 'unknown',

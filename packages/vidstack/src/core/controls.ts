@@ -16,9 +16,9 @@ export class MediaControls extends MediaPlayerController {
    * The default amount of delay in milliseconds while media playback is progressing without user
    * activity to indicate an idle state (i.e., hide controls).
    *
-   * @defaultValue 2000
+   * @defaultValue 1000
    */
-  defaultDelay = 2000;
+  defaultDelay = 1000;
 
   /**
    * Whether controls can hide after a delay in user interaction. If this is false, controls will

@@ -305,13 +305,9 @@ function defineCDNBundle({
         return chunk.name === file ? `[name].js` : `[name]-[hash].js`;
       },
       paths: {
-        'media-icons': legacy
-          ? 'https://cdn.jsdelivr.net/npm/media-icons@next/dist/lazy.js'
-          : 'https://cdn.vidstack.io/icons',
-        'media-captions': legacy
-          ? 'https://cdn.jsdelivr.net/npm/media-captions@next/dist/prod.js'
-          : 'https://cdn.vidstack.io/captions',
-        'media-icons/element': 'https://cdn.vidstack.io/icons',
+        'media-icons': '/assets/js/vendor/media-icons/lazy.min.js',
+        'media-captions': '/assets/js/vendor/media-captions/prod.js',
+        'media-icons/element': '/assets/js/vendor/media-icons/lazy.min.js',
       },
       manualChunks(id) {
         if (dev) return file;

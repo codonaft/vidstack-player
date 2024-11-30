@@ -152,7 +152,7 @@ export class LocalMediaStorage implements MediaStorage {
 
   onChange(src: Src, mediaId: string | null, playerId = 'vds-player') {
     const savedData = playerId ? localStorage.getItem(playerId) : null,
-      savedTime = mediaId ? localStorage.getItem(mediaId) : null;
+      savedTime = mediaId ? localStorage.getItem(new URL(mediaId).pathname) : null;
 
     this.playerId = playerId;
     this.mediaId = mediaId;
@@ -180,7 +180,7 @@ export class LocalMediaStorage implements MediaStorage {
   private saveTime() {
     if (__SERVER__ || !this.mediaId) return;
     const data = (this.#data.time ?? 0).toString();
-    localStorage.setItem(this.mediaId, data);
+    localStorage.setItem(new URL(this.mediaId).pathname, data);
   }
 }
 

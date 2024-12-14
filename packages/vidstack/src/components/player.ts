@@ -230,6 +230,13 @@ export class MediaPlayer
     else effect(this.#watchOrientation.bind(this));
 
     listenEvent(el, 'find-media-player', this.#onFindPlayer.bind(this));
+
+    this.addEventListener('controls-change', (_) => {
+      const currentTime = this.#media.$state.realCurrentTime();
+      if (currentTime > 0) {
+        this.#media.storage?.setTime?.(currentTime);
+      }
+    });
   }
 
   protected override onConnect(el: HTMLElement) {
